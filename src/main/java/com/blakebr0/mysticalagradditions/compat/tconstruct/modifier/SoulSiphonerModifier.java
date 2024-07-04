@@ -8,9 +8,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.ForgeRegistries;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.library.modifiers.TinkerHooks;
+import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
-import slimeknights.tconstruct.library.modifiers.util.ModifierHookMap;
+import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
@@ -23,8 +23,8 @@ public class SoulSiphonerModifier extends Modifier implements MeleeHitModifierHo
     }
 
     @Override
-    protected void registerHooks(ModifierHookMap.Builder builder) {
-        builder.addHook(this, TinkerHooks.MELEE_HIT);
+    protected void registerHooks(ModuleHookMap.Builder builder) {
+        builder.addHook(this, ModifierHooks.MELEE_HIT);
     }
 
     @Override
