@@ -1,24 +1,24 @@
 package com.blakebr0.mysticalagradditions.config;
 
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.fml.ModList;
+import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 public final class ModConfigs {
-    public static final ForgeConfigSpec COMMON;
+    public static final ModConfigSpec COMMON;
 
-    public static final ForgeConfigSpec.DoubleValue WITHERING_SOUL_DROP_CHANCE;
-    public static final ForgeConfigSpec.IntValue DRAGON_SCALES_AMOUNT;
-    public static final ForgeConfigSpec.BooleanValue FERTILIZABLE_CROPS;
-    public static final ForgeConfigSpec.IntValue ESSENCE_APPLE_DURATION;
+    public static final ModConfigSpec.DoubleValue WITHERING_SOUL_DROP_CHANCE;
+    public static final ModConfigSpec.IntValue DRAGON_SCALES_AMOUNT;
+    public static final ModConfigSpec.BooleanValue FERTILIZABLE_CROPS;
+    public static final ModConfigSpec.IntValue ESSENCE_APPLE_DURATION;
 
-    public static final ForgeConfigSpec.BooleanValue GENERATE_NETHER_PROSPERITY;
-    public static final ForgeConfigSpec.BooleanValue GENERATE_NETHER_INFERIUM;
-    public static final ForgeConfigSpec.BooleanValue GENERATE_END_PROSPERITY;
-    public static final ForgeConfigSpec.BooleanValue GENERATE_END_INFERIUM;
+    public static final ModConfigSpec.BooleanValue GENERATE_NETHER_PROSPERITY;
+    public static final ModConfigSpec.BooleanValue GENERATE_NETHER_INFERIUM;
+    public static final ModConfigSpec.BooleanValue GENERATE_END_PROSPERITY;
+    public static final ModConfigSpec.BooleanValue GENERATE_END_INFERIUM;
 
     // Common
     static {
-        final var common = new ForgeConfigSpec.Builder();
+        final var common = new ModConfigSpec.Builder();
 
         common.comment("General configuration options.").push("General");
         WITHERING_SOUL_DROP_CHANCE = common

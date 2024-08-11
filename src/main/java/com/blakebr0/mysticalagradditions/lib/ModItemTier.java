@@ -1,53 +1,61 @@
 package com.blakebr0.mysticalagradditions.lib;
 
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.LazyLoadedValue;
+import com.blakebr0.mysticalagriculture.api.MysticalAgricultureAPI;
+import com.blakebr0.mysticalagriculture.api.MysticalAgricultureTags;
+import com.google.common.base.Suppliers;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
 
 public enum ModItemTier implements Tier {
-    INFERIUM(3, 2000, 9.0F, 4.0F, 12, () -> {
-        var item = ForgeRegistries.ITEMS.getValue(new ResourceLocation("mysticalagriculture:inferium_ingot"));
+    INFERIUM(MysticalAgricultureTags.Blocks.INCORRECT_FOR_INFERIUM_TOOL, 2000, 9.0F, 4.0F, 12, () -> {
+        var item = BuiltInRegistries.ITEM.get(MysticalAgricultureAPI.resource("inferium_ingot"));
         return Ingredient.of(item);
     }),
-    PRUDENTIUM(3, 2800, 11.0F, 6.0F, 14, () -> {
-        var item = ForgeRegistries.ITEMS.getValue(new ResourceLocation("mysticalagriculture:prudentium_ingot"));
+    PRUDENTIUM(MysticalAgricultureTags.Blocks.INCORRECT_FOR_PRUDENTIUM_TOOL, 2800, 11.0F, 6.0F, 14, () -> {
+        var item = BuiltInRegistries.ITEM.get(MysticalAgricultureAPI.resource("prudentium_ingot"));
         return Ingredient.of(item);
     }),
-    TERTIUM(4, 4000, 14.0F, 9.0F, 16, () -> {
-        var item = ForgeRegistries.ITEMS.getValue(new ResourceLocation("mysticalagriculture:tertium_ingot"));
+    TERTIUM(MysticalAgricultureTags.Blocks.INCORRECT_FOR_TERTIUM_TOOL, 4000, 14.0F, 9.0F, 16, () -> {
+        var item = BuiltInRegistries.ITEM.get(MysticalAgricultureAPI.resource("tertium_ingot"));
         return Ingredient.of(item);
     }),
-    IMPERIUM(4, 6000, 19.0F, 13.0F, 18, () -> {
-        var item = ForgeRegistries.ITEMS.getValue(new ResourceLocation("mysticalagriculture:imperium_ingot"));
+    IMPERIUM(MysticalAgricultureTags.Blocks.INCORRECT_FOR_IMPERIUM_TOOL, 6000, 19.0F, 13.0F, 18, () -> {
+        var item = BuiltInRegistries.ITEM.get(MysticalAgricultureAPI.resource("imperium_ingot"));
         return Ingredient.of(item);
     }),
-    SUPREMIUM(5, -1, 25.0F, 20.0F, 20, () -> {
-        var item = ForgeRegistries.ITEMS.getValue(new ResourceLocation("mysticalagriculture:supremium_ingot"));
+    SUPREMIUM(MysticalAgricultureTags.Blocks.INCORRECT_FOR_SUPREMIUM_TOOL, -1, 25.0F, 20.0F, 20, () -> {
+        var item = BuiltInRegistries.ITEM.get(MysticalAgricultureAPI.resource("supremium_ingot"));
         return Ingredient.of(item);
     }),
-    AWAKENED_SUPREMIUM(5, -1, 30.0F, 25.0F, 22, () -> {
-        var item = ForgeRegistries.ITEMS.getValue(new ResourceLocation("mysticalagriculture:awakened_supremium_ingot"));
+    AWAKENED_SUPREMIUM(MysticalAgricultureTags.Blocks.INCORRECT_FOR_AWAKENED_SUPREMIUM_TOOL, -1, 30.0F, 25.0F, 22, () -> {
+        var item = BuiltInRegistries.ITEM.get(MysticalAgricultureAPI.resource("awakened_supremium_ingot"));
         return Ingredient.of(item);
     });
 
-    private final int harvestLevel;
+    private final TagKey<Block> incorrectBlocksForDrops;
     private final int maxUses;
     private final float efficiency;
     private final float attackDamage;
     private final int enchantability;
-    private final LazyLoadedValue<Ingredient> repairMaterial;
+    private final Supplier<Ingredient> repairMaterial;
 
-    ModItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial) {
-        this.harvestLevel = harvestLevel;
+    ModItemTier(TagKey<Block> incorrectBlocksForDrops, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial) {
+        this.incorrectBlocksForDrops = incorrectBlocksForDrops;
         this.maxUses = maxUses;
         this.efficiency = efficiency;
         this.attackDamage = attackDamage;
         this.enchantability = enchantability;
-        this.repairMaterial = new LazyLoadedValue<>(repairMaterial);
+        this.repairMaterial = Suppliers.memoize(repairMaterial::get);
+    }
+
+    @Override
+    public TagKey<Block> getIncorrectBlocksForDrops() {
+        return this.incorrectBlocksForDrops;
     }
 
     @Override
@@ -63,11 +71,6 @@ public enum ModItemTier implements Tier {
     @Override
     public float getAttackDamageBonus() {
         return this.attackDamage;
-    }
-
-    @Override
-    public int getLevel() {
-        return this.harvestLevel;
     }
 
     @Override

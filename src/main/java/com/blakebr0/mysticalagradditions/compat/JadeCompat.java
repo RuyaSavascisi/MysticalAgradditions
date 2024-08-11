@@ -15,7 +15,7 @@ import snownee.jade.api.config.IPluginConfig;
 
 @WailaPlugin
 public class JadeCompat implements IWailaPlugin {
-    private static final ResourceLocation INFUSED_FARMLAND_PROVIDER = new ResourceLocation(MysticalAgradditions.MOD_ID, "infused_farmland");
+    private static final ResourceLocation INFUSED_FARMLAND_PROVIDER = MysticalAgradditions.resource("infused_farmland");
 
     @Override
     public void registerClient(IWailaClientRegistration registration) {

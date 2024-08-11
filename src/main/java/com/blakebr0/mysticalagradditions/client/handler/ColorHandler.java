@@ -5,9 +5,9 @@ import com.blakebr0.mysticalagradditions.block.InfusedFarmlandBlock;
 import com.blakebr0.mysticalagradditions.init.ModItems;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.client.event.RegisterColorHandlersEvent;
-import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 
 public final class ColorHandler {
     @SubscribeEvent
@@ -29,7 +29,7 @@ public final class ColorHandler {
         };
 
         event.register((stack, tint) -> {
-            var fluid = ((BucketItem) stack.getItem()).getFluid();
+            var fluid = ((BucketItem) stack.getItem()).content;
             return tint == 1 ? IClientFluidTypeExtensions.of(fluid).getTintColor() : -1;
         }, buckets);
     }

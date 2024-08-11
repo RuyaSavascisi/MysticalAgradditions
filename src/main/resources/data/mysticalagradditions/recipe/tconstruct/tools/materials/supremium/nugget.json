@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tconstruct"
+    }
+  ],
+  "ingredient": {
+    "item": "mysticalagriculture:supremium_nugget"
+  },
+  "value": 1,
+  "needed": 9,
+  "material": "mysticalagradditions:supremium"
+}

@@ -15,11 +15,11 @@ import net.minecraft.world.level.Level;
 import java.util.List;
 
 public class EssenceAppleItem extends BaseItem {
-    private static final FoodProperties.Builder food = new FoodProperties.Builder().alwaysEat();
+    private static final FoodProperties.Builder food = new FoodProperties.Builder().alwaysEdible();
     private final EssenceAppleTier tier;
 
     public EssenceAppleItem(EssenceAppleTier tier) {
-        super(p -> p.food(food.nutrition(tier.getHunger()).saturationMod(tier.getSaturation()).build()));
+        super(p -> p.food(food.nutrition(tier.getHunger()).saturationModifier(tier.getSaturation()).build()));
         this.tier = tier;
     }
 
@@ -38,7 +38,7 @@ public class EssenceAppleItem extends BaseItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         if (Screen.hasShiftDown()) {
             tooltip.add(ModTooltips.GIVES_BUFFS.build());
             tooltip.addAll(this.tier.getTooltip());

@@ -1,0 +1,42 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+    issueTrackerURL="https://github.com/BlakeBr0/MysticalAgradditions/issues"
+    modId="mysticalagradditions"
+    version="${mod_version}"
+    displayName="Mystical Agradditions"
+    # updateJSONURL="http://myurl.me/"
+    displayURL="https://blakesmods.com/mystical-agradditions"
+    # logoFile="examplemod.png"
+    authors="BlakeBr0"
+    credits="Mark719, xun468"
+    description='''
+    Grow all your resources!
+    '''
+
+    [[dependencies.mysticalagradditions]]
+        modId="neoforge"
+        mandatory=true
+        versionRange="[21.0.0-beta,)"
+        ordering="NONE"
+        side="BOTH"
+    [[dependencies.mysticalagradditions]]
+        modId="minecraft"
+        mandatory=true
+        versionRange="[1.21,1.21.1)"
+        ordering="NONE"
+        side="BOTH"
+    [[dependencies.mysticalagradditions]]
+        modId="cucumber"
+        mandatory=true
+        versionRange="[6.1.0,)"
+        ordering="NONE"
+        side="BOTH"
+    [[dependencies.mysticalagradditions]]
+        modId="mysticalagriculture"
+        mandatory=true
+        versionRange="[7.0.0,)"
+        ordering="AFTER"
+        side="BOTH"

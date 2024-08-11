@@ -7,8 +7,8 @@ import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameRules;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
 
 public final class MobDropsHandler {
 	@SubscribeEvent
@@ -21,7 +21,7 @@ public final class MobDropsHandler {
 
 		var drops = event.getDrops();
 		var witheringSoulChance = ModConfigs.WITHERING_SOUL_DROP_CHANCE.get();
-		var dragonScalesAmount = ModConfigs.DRAGON_SCALES_AMOUNT.get();
+		int dragonScalesAmount = ModConfigs.DRAGON_SCALES_AMOUNT.get();
 
 		if (entity instanceof WitherBoss && Math.random() < witheringSoulChance) {
 			drops.add(new ItemEntity(level, entity.getX(), entity.getY(), entity.getZ(), new ItemStack(ModItems.WITHERING_SOUL.get())));

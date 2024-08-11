@@ -1,7 +1,7 @@
 package com.blakebr0.mysticalagradditions.lib;
 
 import com.blakebr0.cucumber.util.Tooltip;
-import com.blakebr0.mysticalagriculture.api.util.AugmentUtils;
+import com.blakebr0.mysticalagriculture.api.util.TinkerableUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 
@@ -12,6 +12,6 @@ public final class ModTooltips {
     public static final Tooltip BUFF_LINE = new Tooltip("tooltip.mysticalagradditions.buff_line");
 
     public static Component getTooltipForTier(int tier) {
-        return TIER.args(AugmentUtils.getTooltipForTier(tier)).color(ChatFormatting.GRAY).build();
+        return TIER.args(TinkerableUtils.getTooltipForTier(tier)).color(ChatFormatting.GRAY).build();
     }
 }

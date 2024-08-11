@@ -1,0 +1,27 @@
+{
+  "type": "cucumber:shaped_no_mirror",
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "avaritia"
+    },
+    {
+      "type": "mysticalagriculture:crop_enabled",
+      "crop": "mysticalagradditions:neutronium"
+    }
+  ],
+  "pattern": [
+    "EEE",
+    "EEE",
+    "EEE"
+  ],
+  "key": {
+    "E": {
+      "item": "mysticalagriculture:neutronium_essence"
+    }
+  },
+  "result": {
+    "id": "avaritia:neutron_nugget",
+    "count": 3
+  }
+}
