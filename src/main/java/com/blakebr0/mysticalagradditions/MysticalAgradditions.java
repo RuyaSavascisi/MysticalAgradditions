@@ -1,6 +1,5 @@
 package com.blakebr0.mysticalagradditions;
 
-import com.blakebr0.cucumber.helper.ConfigHelper;
 import com.blakebr0.mysticalagradditions.client.handler.ColorHandler;
 import com.blakebr0.mysticalagradditions.config.ModConfigs;
 import com.blakebr0.mysticalagradditions.handler.MobDropsHandler;
@@ -48,9 +47,7 @@ public final class MysticalAgradditions {
             bus.register(new ColorHandler());
         }
 
-        mod.registerConfig(ModConfig.Type.COMMON, ModConfigs.COMMON);
-
-        ConfigHelper.load(ModConfigs.COMMON, "mysticalagradditions-common.toml");
+        mod.registerConfig(ModConfig.Type.STARTUP, ModConfigs.COMMON, "mysticalagradditions-common.toml");
     }
 
     @SubscribeEvent

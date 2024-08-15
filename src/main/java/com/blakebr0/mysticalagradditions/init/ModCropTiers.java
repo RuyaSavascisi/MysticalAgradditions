@@ -16,7 +16,7 @@ public final class ModCropTiers {
     public static void onPostRegisterCrops(ICropRegistry registry) {
         SIX.setFarmland(ModBlocks.INSANIUM_FARMLAND)
                 .setEssence(ModItems.INSANIUM_ESSENCE)
-//                .setFertilizable(ModConfigs.FERTILIZABLE_CROPS.get()) // TODO: 1.21 need to figure out how to make configs load earlier
+                .setFertilizable(ModConfigs.FERTILIZABLE_CROPS.get())
                 .setSecondarySeedDrop(false);
     }
 }
