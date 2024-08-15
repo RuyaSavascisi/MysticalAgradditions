@@ -74,7 +74,6 @@
 
   "tooltip.mysticalagradditions.drop_chance": "%s ドロップ確率",
   "tooltip.mysticalagradditions.gives_buffs": "付与されるバフ",
-  "tooltip.mysticalagradditions.buff_line": " - %s（%s）",
 
   "jei.desc.mysticalagradditions.withering_soul": "ウィザーの死亡時にドロップします。",
   "jei.desc.mysticalagradditions.dragon_scale": "エンダードラゴンの死亡時にドロップします。",

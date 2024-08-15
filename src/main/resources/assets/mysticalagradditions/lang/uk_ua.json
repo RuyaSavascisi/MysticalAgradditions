@@ -71,7 +71,6 @@
 
   "tooltip.mysticalagradditions.drop_chance": "Шанс випадання: %s",
   "tooltip.mysticalagradditions.gives_buffs": "Дає ефекти:",
-  "tooltip.mysticalagradditions.buff_line": " - %s (%s)",
 
   "jei.desc.mysticalagradditions.withering_soul": "Випадає після смерті Візера.",
   "jei.desc.mysticalagradditions.dragon_scale": "Випадає після смерті Ендер-Дракона.",

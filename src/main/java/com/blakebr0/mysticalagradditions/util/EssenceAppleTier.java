@@ -56,13 +56,11 @@ public enum EssenceAppleTier {
     public List<Component> getTooltip() {
         if (this.tooltip.isEmpty()) {
             for (var effect : this.effects) {
-                var buff = Component.literal(effect.value().getDisplayName().getString() + " II");
-                int buffDuration = ModConfigs.ESSENCE_APPLE_DURATION.get();
-                var minutes = Math.floorDiv(buffDuration, 60);
-                var seconds = String.format("%02d", buffDuration % 60);
-                var duration = Component.literal(minutes + ":" + seconds);
+                int duration = ModConfigs.ESSENCE_APPLE_DURATION.get();
+                var minutes = Math.floorDiv(duration, 60);
+                var seconds = String.format("%02d", duration % 60);
 
-                this.tooltip.add(ModTooltips.BUFF_LINE.args(buff, duration).build());
+                this.tooltip.add(ModTooltips.createMobEffectLine(effect, "II", minutes + ":" + seconds));
             }
         }
 
