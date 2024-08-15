@@ -1,6 +1,11 @@
 {
   "replace": false,
   "values": [
-    "#c:tools/paxels"
+    "mysticalagradditions:inferium_paxel",
+    "mysticalagradditions:prudentium_paxel",
+    "mysticalagradditions:tertium_paxel",
+    "mysticalagradditions:imperium_paxel",
+    "mysticalagradditions:supremium_paxel",
+    "mysticalagradditions:awakened_supremium_paxel"
   ]
 }
