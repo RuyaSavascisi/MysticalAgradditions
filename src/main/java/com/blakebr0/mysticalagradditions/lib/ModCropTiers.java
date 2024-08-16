@@ -1,7 +1,9 @@
-package com.blakebr0.mysticalagradditions.init;
+package com.blakebr0.mysticalagradditions.lib;
 
 import com.blakebr0.mysticalagradditions.MysticalAgradditions;
 import com.blakebr0.mysticalagradditions.config.ModConfigs;
+import com.blakebr0.mysticalagradditions.init.ModBlocks;
+import com.blakebr0.mysticalagradditions.init.ModItems;
 import com.blakebr0.mysticalagriculture.api.crop.CropTier;
 import com.blakebr0.mysticalagriculture.api.registry.ICropRegistry;
 import net.minecraft.ChatFormatting;

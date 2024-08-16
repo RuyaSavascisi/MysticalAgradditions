@@ -1,7 +1,5 @@
 package com.blakebr0.mysticalagradditions.lib;
 
-import com.blakebr0.mysticalagradditions.init.ModCropTiers;
-import com.blakebr0.mysticalagradditions.init.ModCrops;
 import com.blakebr0.mysticalagriculture.api.IMysticalAgriculturePlugin;
 import com.blakebr0.mysticalagriculture.api.MysticalAgriculturePlugin;
 import com.blakebr0.mysticalagriculture.api.lib.PluginConfig;

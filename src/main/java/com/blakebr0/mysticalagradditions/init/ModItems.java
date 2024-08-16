@@ -8,6 +8,7 @@ import com.blakebr0.mysticalagradditions.item.EssenceCoalItem;
 import com.blakebr0.mysticalagradditions.item.EssenceItem;
 import com.blakebr0.mysticalagradditions.item.EssencePaxelItem;
 import com.blakebr0.mysticalagradditions.item.WitheringSoulItem;
+import com.blakebr0.mysticalagradditions.lib.ModCropTiers;
 import com.blakebr0.mysticalagradditions.lib.ModItemTier;
 import com.blakebr0.mysticalagradditions.util.EssenceAppleTier;
 import net.minecraft.core.registries.Registries;

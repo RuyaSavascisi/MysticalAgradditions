@@ -1,6 +1,7 @@
-package com.blakebr0.mysticalagradditions.init;
+package com.blakebr0.mysticalagradditions.lib;
 
 import com.blakebr0.mysticalagradditions.MysticalAgradditions;
+import com.blakebr0.mysticalagradditions.init.ModBlocks;
 import com.blakebr0.mysticalagriculture.api.crop.Crop;
 import com.blakebr0.mysticalagriculture.api.crop.CropType;
 import com.blakebr0.mysticalagriculture.api.lib.LazyIngredient;
