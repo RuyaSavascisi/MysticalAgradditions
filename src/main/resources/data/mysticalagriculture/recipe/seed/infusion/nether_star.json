@@ -1,6 +1,6 @@
 {
   "type": "mysticalagriculture:infusion",
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "mysticalagriculture:crop_enabled",
       "crop": "mysticalagradditions:nether_star"

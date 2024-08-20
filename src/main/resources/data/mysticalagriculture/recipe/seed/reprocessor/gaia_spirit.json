@@ -1,6 +1,6 @@
 {
   "type": "mysticalagriculture:reprocessor",
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "mysticalagriculture:crop_enabled",
       "crop": "mysticalagradditions:gaia_spirit"
