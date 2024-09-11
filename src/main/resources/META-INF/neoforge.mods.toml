@@ -31,12 +31,12 @@ license="MIT"
     [[dependencies.mysticalagradditions]]
         modId="cucumber"
         mandatory=true
-        versionRange="[8.0.0,)"
+        versionRange="[${cucumber_version},)"
         ordering="NONE"
         side="BOTH"
     [[dependencies.mysticalagradditions]]
         modId="mysticalagriculture"
         mandatory=true
-        versionRange="[8.0.0,)"
+        versionRange="[${mysticalagriculture_version},)"
         ordering="AFTER"
         side="BOTH"
